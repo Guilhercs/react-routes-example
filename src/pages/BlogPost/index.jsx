@@ -9,7 +9,7 @@ import Typography from "../../components/Typography";
 import { CommentList } from "../../components/CommentList";
 import ReactMarkdown from "react-markdown";
 
-export const BlogPost = () => {
+const BlogPost = () => {
   const post = posts[0];
   return (
     <AppLayout>
@@ -52,3 +52,5 @@ export const BlogPost = () => {
     </AppLayout>
   );
 };
+
+export default BlogPost;

@@ -15,7 +15,7 @@ import { Providers } from "../../components/Providers";
 import { Link } from "../../components/Link";
 import styles from "./register.module.css";
 
-export const Register = () => {
+const Register = () => {
   return (
     <AuthLayout>
       <AuthFormContainer bannerSrc={banner}>
@@ -68,3 +68,5 @@ export const Register = () => {
     </AuthLayout>
   );
 };
+
+export default Register;

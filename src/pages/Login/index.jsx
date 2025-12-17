@@ -15,7 +15,7 @@ import { Providers } from "../../components/Providers";
 import { Link } from "../../components/Link";
 import styles from "./login.module.css";
 
-export const Login = () => {
+const Login = () => {
   return (
     <AuthLayout>
       <AuthFormContainer bannerSrc={banner}>
@@ -64,3 +64,5 @@ export const Login = () => {
     </AuthLayout>
   );
 };
+
+export default Login;
