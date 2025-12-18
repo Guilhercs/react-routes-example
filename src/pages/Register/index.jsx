@@ -14,8 +14,22 @@ import { TextDivider } from "../../components/TextDivider";
 import { Providers } from "../../components/Providers";
 import { Link } from "../../components/Link";
 import styles from "./register.module.css";
+import { useAuth } from "../../hooks/useAuth";
+import { useNavigate } from "react-router";
 
 const Register = () => {
+  const { register } = useAuth();
+  const navigate = useNavigate();
+
+  const onSubmit = (formData) => {
+    const name = formData.get("name");
+    const email = formData.get("email");
+    const password = formData.get("password");
+
+    const response = register(name, email, password);
+    response.success ? navigate("/auth/login") : console.error(response.error);
+  };
+
   return (
     <AuthLayout>
       <AuthFormContainer bannerSrc={banner}>
@@ -25,10 +39,10 @@ const Register = () => {
         <Typography variant="h2" color="--offwhite">
           Olá! Preencha seus dados.
         </Typography>
-        <Form action="">
+        <Form action={onSubmit}>
           <Fieldset>
             <Label>Nome</Label>
-            <Input name="nome" id="nome" placeholder="Nome completo" required />
+            <Input name="name" id="name" placeholder="Nome completo" required />
           </Fieldset>
           <Fieldset>
             <Label>E-mail</Label>
@@ -57,7 +71,7 @@ const Register = () => {
           <Typography variant="body" color="--offwhite">
             Já tem conta?
           </Typography>
-          <Link href="#">
+          <Link href="/auth/login">
             <Typography variant="body" color="--highlight-green">
               Faça seu login!
             </Typography>

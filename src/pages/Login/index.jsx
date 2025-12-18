@@ -53,7 +53,7 @@ const Login = () => {
           <Typography variant="body" color="--offwhite">
             Ainda não tem conta?
           </Typography>
-          <Link href="#">
+          <Link href="/auth/register">
             <Typography variant="body" color="--highlight-green">
               Crie seu cadastro!
             </Typography>
