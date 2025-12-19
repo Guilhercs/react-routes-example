@@ -66,13 +66,13 @@ export const useAuth = () => {
     }
   }
 
+  
+  const isAuthenticated = !!user
+  
   const logout = () => {
     setUser(null)
     localStorage.removeItem('auth_user')
   }
-
-  const isAuthenticated = !!user
-
   return {
     user,
     isLoading,

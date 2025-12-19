@@ -57,10 +57,10 @@ const Register = () => {
           <Fieldset>
             <Label>Senha</Label>
             <Input name="password" id="password" type="password" required />
-            <Checkbox label="Lembrar-me" required />
+            <Checkbox label="Lembrar-me" />
           </Fieldset>
           <Button type="submit">
-            Login <IconArrowFoward />
+            Cadastrar-se <IconArrowFoward />
           </Button>
         </Form>
         <div>
